@@ -5,7 +5,7 @@ function Product(props) {
     <div  >
       <h3>{props.desc}</h3>
       <img src={props.image}></img>
-      <p>{props.value}</p>
+      <input value={props.value}/> <span>quantity</span>
     </div>
   );
 }

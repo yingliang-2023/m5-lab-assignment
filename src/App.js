@@ -12,7 +12,7 @@ console.log(products);
 function App() {
   return (
     <div>
-     <h1>React Shop Cart</h1>
+     <h1>Shop to React</h1>
 
     {products.map((product)=>
     <Product key={product.key}
