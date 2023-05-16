@@ -7,13 +7,23 @@ import products from "./products";
 import Product from "./displayProduct";
 import Navbar from './Navbar';
 
-console.log(products);
 
-function App() {
-  return (
+
+class App extends Component{
+  constructor(props) {
+    super(props);
+    this.state = {
+      products:products
+    };
+  }
+
+  render(){
+    return (
     <div>
-    <Navbar />
+    <Navbar total={this.state.products.length}/>
     </div>
   );
 }
+};
+
 export default App;

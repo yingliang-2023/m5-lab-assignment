@@ -9,21 +9,27 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./Home";
 import Cart from "./Cart";
 
+
+
 function Navbar(props) {
+
   return (
     <div className="header ">
 
     {/*Navigation*/}
       <Router>
             <Link to="/">
-              Shop 2 React
+              <h1>Shop 2 React</h1>
             </Link>
+
             <Link to="/cart">
             <div className="position-absolute top-0 end-0">
+     <h1>
      <FontAwesomeIcon
         icon={faShoppingCart}
       />
-      <span># items</span>
+      <span>{props.total} items</span>
+      </h1>
       </div> 
             </Link>
         

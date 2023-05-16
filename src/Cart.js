@@ -7,6 +7,7 @@ import products from "./products";
 import Product from "./displayProduct";
 
 
+
 class Cart extends Component {
     constructor(props) {
       super(props);
