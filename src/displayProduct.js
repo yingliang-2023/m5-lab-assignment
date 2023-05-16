@@ -8,19 +8,29 @@ function Product(props) {
 
   var [count, setCount] = useState(0);
   var [show,setShow] = useState(false);
+  var [total, setTotal] = useState(0);
 
   const handleClose=()=>setShow(false);
   const handleShow=()=>setShow(true);
-  var total=0;
+
+  function addProduct(){
+    setCount(count+1);
+    setTotal(total+1);
+  }
  
+  function removeProduct(){
+    setCount(count-1);
+    setTotal(total-1);
+  }
+
   return (
     <div  >
       <h3>{props.desc}</h3>
       <img src={props.image} onClick={()=>handleShow()}></img>
-      <button onClick={() => {setCount(count-1);total=-1}}>-</button>
-      <button onClick={() => {setCount(count+1);total=+1}}>+</button>
+      <button onClick={removeProduct}>-</button>
+      <button onClick={addProduct}>+</button>
       <input name="quantity" value={count}/> <span>quantity</span>
-    
+
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>{props.desc}</Modal.Title>

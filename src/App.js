@@ -13,17 +13,6 @@ function App() {
   return (
     <div>
     <Navbar />
-    
-    <div>
-    {products.map((product)=>
-    <Product key={product.key}
-             desc={product.desc}
-             image={product.image}
-             rating={product.rating}
-            value={product.value} />
-    )}
-    </div>
-
     </div>
   );
 }
