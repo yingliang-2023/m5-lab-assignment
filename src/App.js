@@ -1,5 +1,5 @@
 import './App.css';
-import React, { Component } from 'react';
+import React, { Component} from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import items from "./products";
 import Navbar from './Navbar';
@@ -15,14 +15,15 @@ class App extends Component{
   };
 
   addProduct = (item) => {
-    const updateQuantity = item.value++;
-    this.setState({ updateQuantity });
+    this.setState({item:{value:item.value++} });
   };
+
+
+
 
   removeProduct = (item) => {
     if (item.value > 0) {
-      const updateQuantity = item.value--;
-      this.setState({updateQuantity});
+      this.setState({item:{value:item.value++}});
     }
   };
 
