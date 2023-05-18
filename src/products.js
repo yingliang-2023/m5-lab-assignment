@@ -1,4 +1,4 @@
-const products = [
+const items = [
     {
       key: 1,
       image: "./products/cologne.jpg",
@@ -32,5 +32,5 @@ const products = [
     }
   ];
   
-  export default products;
+  export default items;
   

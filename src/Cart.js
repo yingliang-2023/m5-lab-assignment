@@ -1,33 +1,26 @@
 import './App.css';
-import React, { Component } from 'react';
+import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
-import {faShoppingCart} from "@fortawesome/free-solid-svg-icons";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import products from "./products";
-import Product from "./displayProduct";
 
 
+function Cart(props){
+    return (
+        <div>
+        <h2> Your Shopping Cart</h2>
+            {props.itemlist.map((product)=>{
+                if (product.value>0){
+                return (
+                    <div key={product.id}>
+                    <p>{product.desc}</p>
+                    <img src={product.image} alt="img"></img>
+                    <p> Quantity: {product.value}</p>
 
-class Cart extends Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-       products:products
-      };
-    };
-
-    render() {
-        return (
-            <div>
-                {this.state.products.map((product)=>
-                    <Product key={product.key}
-                    desc={product.desc}
-                    image={product.image}
-                    rating={product.rating}
-                    value={product.value} />
-                    )}
-            </div>
-        )}
-}
+                    </div>
+                )}
+            })}
+           </div>
+    )
+};
+       
 
 export default Cart;

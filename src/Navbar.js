@@ -1,10 +1,8 @@
 import './App.css';
-import React, { Component } from 'react';
+import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import {faShoppingCart} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import products from "./products";
-import Product from "./displayProduct";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./Home";
 import Cart from "./Cart";
@@ -28,7 +26,10 @@ function Navbar(props) {
      <FontAwesomeIcon
         icon={faShoppingCart}
       />
-      <span>{props.total} items</span>
+      {props.itemlist
+                .map((item) => item.value)
+                .reduce((acc, curr) => acc + curr, 0)}{" "}
+              items
       </h1>
       </div> 
             </Link>
@@ -36,12 +37,15 @@ function Navbar(props) {
 
         {/*Routes*/}
         <Routes>
-          <Route path="/" element={<Home />}/>  
+          <Route path="/" element={<Home 
+            itemlist={props.itemlist}
+              addProduct={props.addProduct}
+              removeProduct={props.removeProduct}
+          />}/>  
 
           <Route
             path="/cart"
-            element={<Cart />}
-            // element={<cart lists1={props.lists1} lists2={props.lists2} />}
+            element={<Cart itemlist={props.itemlist}/>}
           />
           
         </Routes>
