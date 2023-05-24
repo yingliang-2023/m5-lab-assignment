@@ -25,7 +25,7 @@ function Facebook() {
     <div class="container">
       <Card style={{width:"800px"}} className='mx-auto mt-5'>
        <Card.Header className='pb-4'>
-        <h1>My React App</h1>
+      <p className='h1'>Sign In</p>
        </Card.Header>
 
        <Card.Body>
@@ -83,7 +83,7 @@ function WelcomeBack(fbpic,fbdata){
     <h3 className='d-inline text-success mx-2'>
       Welcome Back {fbdata.name}!
       </h3>
-      <p className='my-5'>This is the home page of the app</p>
+      <p className='my-5'>Time to check out?</p>
       </React.Fragment>
    )
 

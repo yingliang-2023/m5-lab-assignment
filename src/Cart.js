@@ -1,9 +1,6 @@
 import './App.css';
 import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import FacebookLogin from "./Facebook";
-
 
 function Cart(props){
     return (
@@ -22,10 +19,24 @@ function Cart(props){
                 )}
             })}
 
+            
+           <div>{props.itemlist.map((item) =>item.value).reduce((acc, curr) => acc + curr, 0) >0? 
+                        <a id="checkOutButton" href="/facebook" class="btn btn-primary btn-lg" role="button" aria-pressed="true">Check Out</a>
+                        : 
+                        <div>
+                        <p class='h6'>Your cart is empty!</p>
+                        <button class="btn btn-success btn">Continue Shop</button>
 
-            <a href="/facebook" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Check Out</a>
+                        </div>
 
-            </div>
+
+                    }
+                
+           </div>
+            
+            
+
+    </div>
    
     )
 };
