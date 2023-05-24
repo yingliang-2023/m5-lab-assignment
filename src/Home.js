@@ -10,7 +10,7 @@ function Home(props){
 
 
         return (
-            <div>
+            <div class="container">
             <Product
             itemlist={props.itemlist}
             addProduct={props.addProduct}

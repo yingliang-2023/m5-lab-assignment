@@ -6,6 +6,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./Home";
 import Cart from "./Cart";
+import Facebook from './Facebook';
 
 
 
@@ -22,7 +23,7 @@ function Navbar(props) {
 
             <Link to="/cart">
             <div className="position-absolute top-0 end-0">
-     <h1>
+     <h5>
      <FontAwesomeIcon
         icon={faShoppingCart}
       />
@@ -30,7 +31,7 @@ function Navbar(props) {
                 .map((item) => item.value)
                 .reduce((acc, curr) => acc + curr, 0)}{" "}
               items
-      </h1>
+      </h5>
       </div> 
             </Link>
         
@@ -47,6 +48,12 @@ function Navbar(props) {
             path="/cart"
             element={<Cart itemlist={props.itemlist}/>}
           />
+
+          <Route
+            path="/facebook"
+            element={<Facebook  />}
+          />
+
           
         </Routes>
       </Router>
