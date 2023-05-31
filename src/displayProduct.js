@@ -17,7 +17,7 @@ function Product(props) {
         <img src={product.image} alt="img" onClick={()=>handleShow} />
         <button onClick={()=>props.addProduct(product)}>+</button>
         <button onClick={()=>props.removeProduct(product)}>-</button>
-        <span>{product.value}</span> Quantity
+        <input type="number" value={product.value} /> Quantity
         </div>))}
 
       <Modal show={show} onHide={handleClose}>
