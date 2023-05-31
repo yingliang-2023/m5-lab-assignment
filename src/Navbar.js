@@ -42,7 +42,11 @@ function Navbar(props) {
             itemlist={props.itemlist}
               addProduct={props.addProduct}
               removeProduct={props.removeProduct}
-          />}/>  
+              sortType={props.sortType}
+              listNum={props.listNum}
+              />
+            }
+          />  
 
           <Route
             path="/cart"

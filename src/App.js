@@ -10,6 +10,8 @@ class App extends Component{
   constructor(props) {
     super(props);
     this.state = {
+      sortType:"normal",//nomal,lowest,highest
+      listNum:"",
       products:items
     };
   };
@@ -33,7 +35,8 @@ class App extends Component{
     <Navbar itemlist={this.state.products}
             addProduct={this.addProduct}
             removeProduct={this.removeProduct}
-
+            sortType={this.state.sortType}
+            listNum={this.state.listNum}
     />
     </div>
   );
