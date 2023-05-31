@@ -27,19 +27,38 @@ class App extends Component{
   };
 
   onSort = (listNum,sortType) => {
-    listNum.sort((a,b) => {
-      const priceA = a.price;
-      const priceB = b.price;
-  
-      let comparison = 0;
-      if (priceA > priceB) {
-        comparison = 1;
-      } else if (priceA < priceB) {
-        comparison = -1;
-      }
-      return comparison;
-    })
-    
+    switch (sortType) {
+      case 'asc':
+        listNum.sort((a,b) => {
+          const priceA = a.price;
+          const priceB = b.price;
+      
+          let comparison = 0;
+          if (priceA > priceB) {
+            comparison = 1;
+          } else if (priceA < priceB) {
+            comparison = -1;
+          }
+          return comparison;
+        });
+        break;
+      case 'desc':
+        listNum.sort((a,b) => {
+          const priceA = a.price;
+          const priceB = b.price;
+      
+          let comparison = 0;
+          if (priceA > priceB) {
+            comparison = -1;
+          } else if (priceA < priceB) {
+            comparison = 1;
+          }
+          return comparison;
+        })
+      case 'normal':
+        console.log('default order');
+        break;
+    }
     this.setState({sortType});
   }
 
