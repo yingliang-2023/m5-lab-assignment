@@ -28,7 +28,7 @@ class App extends Component{
 
   onSort = (listNum,sortType) => {
     switch (sortType) {
-      case 'asc':
+      case 'lowest':
         listNum.sort((a,b) => {
           const priceA = a.price;
           const priceB = b.price;
@@ -42,7 +42,7 @@ class App extends Component{
           return comparison;
         });
         break;
-      case 'desc':
+      case 'highest':
         listNum.sort((a,b) => {
           const priceA = a.price;
           const priceB = b.price;
@@ -54,9 +54,21 @@ class App extends Component{
             comparison = 1;
           }
           return comparison;
-        })
+        });
+        break;
       case 'normal':
-        console.log('default order');
+        listNum.sort((a,b) => {
+          const idA = a.key;
+          const idB = b.key;
+      
+          let comparison = 0;
+          if (idA > idB) {
+            comparison = 1;
+          } else if (idA < idB) {
+            comparison = -1;
+          }
+          return comparison;
+        })
         break;
     }
     this.setState({sortType});

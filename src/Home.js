@@ -17,9 +17,9 @@ function Home(props){
             <label for="sortType" className='dropdown'>Sort price by: </label>
 
             <select name="sortType" id="sortType" onChange={ (event)=>props.onSort(props.itemlist,getSelectedValue(event))}>
-                <option value="asc">Lowest</option>
-                <option value="normal">Normal</option>
-                <option value="desc">Highest</option>
+                <option value="lowest">Lowest</option>
+                <option selected="selected" value="normal">Normal</option>
+                <option value="highest">Highest</option>
             </select>
             <Product
             itemlist={props.itemlist}
