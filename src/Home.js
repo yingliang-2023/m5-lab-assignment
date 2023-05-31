@@ -13,7 +13,7 @@ function Home(props){
      }
 
         return (
-            <div class="container">
+            <div className="container">
             <label for="sortType" className='dropdown'>Sort price by: </label>
 
             <select name="sortType" id="sortType" onChange={ (event)=>props.onSort(props.itemlist,getSelectedValue(event))}>

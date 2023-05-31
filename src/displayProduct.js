@@ -13,7 +13,7 @@ function Product(props) {
     <div className="container">
       {props.itemlist.map((product)=>(
         <div key={product.id} className="border">
-        <p className="h4">{product.desc}
+        <p className="h4">{product.desc} 
         <span className="price"><strong>${product.price}</strong></span></p> 
         <img src={product.image} alt="img" onClick={()=>handleShow} />
         <button onClick={()=>props.addProduct(product)}>+</button>
