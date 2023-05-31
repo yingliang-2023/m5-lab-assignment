@@ -24,3 +24,13 @@ Link{
 #checkOutButton{
   margin-top:10px;
 }
+
+.price{
+  color: red;
+}
+
+.dropdown{
+  margin: 50px 10px 50px 500px;
+  
+
+}

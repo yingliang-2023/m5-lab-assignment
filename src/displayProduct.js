@@ -10,10 +10,11 @@ function Product(props) {
   const handleShow=()=>setShow(true);
 
   return (
-    <div>
+    <div className="container">
       {props.itemlist.map((product)=>(
-        <div key={product.id}>
-        <p>{product.desc}</p>
+        <div key={product.id} className="border">
+        <p className="h4">{product.desc}
+        <span className="price"><strong>${product.price}</strong></span></p> 
         <img src={product.image} alt="img" onClick={()=>handleShow} />
         <button onClick={()=>props.addProduct(product)}>+</button>
         <button onClick={()=>props.removeProduct(product)}>-</button>

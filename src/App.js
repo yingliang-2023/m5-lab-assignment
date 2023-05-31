@@ -10,7 +10,7 @@ class App extends Component{
   constructor(props) {
     super(props);
     this.state = {
-      sortType:"normal",//nomal,lowest,highest
+      sortType:"asc",//nomal=blank,lowest=asc,highest=desc
       listNum:"",
       products:items
     };
@@ -20,14 +20,28 @@ class App extends Component{
     this.setState({item:{value:item.value++} });
   };
 
-
-
-
   removeProduct = (item) => {
     if (item.value > 0) {
       this.setState({item:{value:item.value++}});
     }
   };
+
+  onSort = (listNum,sortType) => {
+    listNum.sort((a,b) => {
+      const priceA = a.price;
+      const priceB = b.price;
+  
+      let comparison = 0;
+      if (priceA > priceB) {
+        comparison = 1;
+      } else if (priceA < priceB) {
+        comparison = -1;
+      }
+      return comparison;
+    })
+    
+    this.setState({sortType});
+  }
 
   render(){
     return (
@@ -37,6 +51,7 @@ class App extends Component{
             removeProduct={this.removeProduct}
             sortType={this.state.sortType}
             listNum={this.state.listNum}
+            onSort={this.onSort}
     />
     </div>
   );
