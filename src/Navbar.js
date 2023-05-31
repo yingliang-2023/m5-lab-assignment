@@ -44,6 +44,7 @@ function Navbar(props) {
               removeProduct={props.removeProduct}
               sortType={props.sortType}
               listNum={props.listNum}
+              onSort={props.onSort}
               />
             }
           />  

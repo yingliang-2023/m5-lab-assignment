@@ -11,9 +11,9 @@ function Home(props){
 
         return (
             <div class="container">
-            <label for="sortType">Sort price by: </label>
+            <label for="sortType" className='dropdown'>Sort price by: </label>
 
-            <select name="sortType" id="sortType">
+            <select name="sortType" id="sortType" onChange={props.onSort()}>
                 <option value="Lowest">Lowest</option>
                 <option value="Normal">Normal</option>
                 <option value="Highest">Highest</option>
