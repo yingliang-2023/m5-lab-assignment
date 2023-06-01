@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
-import {faShoppingCart} from "@fortawesome/free-solid-svg-icons";
+import {faShoppingCart,faRegistered} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./Home";
@@ -18,7 +18,11 @@ function Navbar(props) {
     {/*Navigation*/}
       <Router>
             <Link to="/">
-              <h1>Shop 2 React</h1>
+              <h1>Shop 2
+              
+              <FontAwesomeIcon id="rIcon" icon={faRegistered} style={{color: "#fff",}} />
+              
+              eact</h1>
             </Link>
 
             <Link to="/cart">

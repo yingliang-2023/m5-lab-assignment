@@ -1,6 +1,9 @@
 import React, {useState} from "react";
 import {Modal} from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import {faCirclePlus,faCircleMinus} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+
 
 function Product(props) {
 
@@ -16,8 +19,15 @@ function Product(props) {
         <p className="h4">{product.desc} 
         <span className="price"><strong>${product.price}</strong></span></p> 
         <img src={product.image} alt="img" onClick={()=>handleShow} />
-        <button onClick={()=>props.addProduct(product)}>+</button>
-        <button onClick={()=>props.removeProduct(product)}>-</button>
+
+        <button onClick={()=>props.addProduct(product)}>
+        <FontAwesomeIcon icon={faCirclePlus} style={{color: "#6e91cf",}} />        
+        </button>
+
+        <button onClick={()=>props.removeProduct(product)}>
+        <FontAwesomeIcon icon={faCircleMinus} style={{color: "#6e91cf",}} />        
+        </button>
+
         <input type="number" value={product.value} /> Quantity
         </div>))}
 

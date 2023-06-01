@@ -27,10 +27,15 @@ Link{
 
 .price{
   color: red;
+  margin-left: 25px;
 }
 
 .dropdown{
   margin: 50px 10px 50px 500px;
   
 
+}
+
+#rIcon{
+  margin-left: 10px;
 }
