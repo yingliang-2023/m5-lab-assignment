@@ -22,7 +22,7 @@ class App extends Component{
 
   removeProduct = (item) => {
     if (item.value > 0) {
-      this.setState({item:{value:item.value++}});
+      this.setState({item:{value:item.value--}});
     }
   };
 
